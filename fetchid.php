@@ -18,10 +18,10 @@
 	$expression = strtolower($_GET['expression']);	
 
 	//Connect to database
-	mysql_connect('rijksemoms111.mysql.db',"rijksemoms111","e87ZcpMvNrDg");
+	mysql_connect('SERVER',"USER","PASSWORD");
 	
 	//Select database
-	mysql_select_db("rijksemoms111") or die(mysql_error());
+	mysql_select_db("USER") or die(mysql_error());
 	
 	//Prepeare query
 	$sql = "SELECT e_id FROM faces WHERE age_group = $age_group AND gender = '$gender' AND expression = '$expression'"; //
