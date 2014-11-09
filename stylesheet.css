@@ -1,0 +1,244 @@
+/******** GENERAL ********/
+html { 
+  margin:0;
+  padding:0;
+  background: url(http://rijksemotions.com/img/background.png) no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+  background-size: cover; /* version standardisée */
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+    font-size:12px;
+    line-height:17px;
+	color:#000;
+    text-align:left;
+    position:relative;
+}
+
+h1 {
+	font-size: 25px;
+	font-weight:normal;
+	line-height: 25px;
+	padding: 65px 0px 20px 85px;
+}
+
+
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover{
+	color: red;
+	text-decoration: none;
+}
+
+.background{
+	width:auto;
+	height:780px;
+	position: absolute;
+}
+
+.container{
+	width: 1440px;
+	max-height:auto;
+}
+
+
+/******** LEFT ********/
+.container-left {
+	width:310px;
+	margin-top:58px;
+	margin-left:5%;
+	max-height: auto;
+	position:absolute;
+}
+.logo{
+	width:200px;
+	margin-bottom: 30px;
+	height:auto;
+}
+
+/******** NAVIGATION ********/
+.nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+.nav li {
+	height: 40px;
+	display: inline;
+
+}
+ 
+.nav a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+	display: inline;
+	margin-right: 20px;
+}
+
+/******** HOME - ABOUT - GITHUB - CONTACT ********/
+.about{
+	width:270px;
+	list-style: none;
+}
+
+.contact{
+	width:270px;
+	list-style: none;
+}
+
+.github{
+	width:270px;
+	list-style: none;
+}
+
+.home{
+	width:270px;
+	list-style: none;
+}
+
+.social {
+	width:100px;
+	height: auto;
+	margin-top:15px;
+}
+
+.social img{
+	width: 17px;
+	margin-right: 9px;
+}
+
+/******** PAINTING - BUTTON ********/
+.container-mid {
+	width:680px;
+	margin-top:176px;
+	margin-left:32%;
+	position:absolute;
+	float:left;
+}
+
+#advertisement-img {
+	width:264px;
+	height:363px;
+	-webkit-box-shadow: 0 5px 10px 2px #777;
+	   -moz-box-shadow: 0 5px 10px 2px #777;
+	        box-shadow: 0 0px 10px 2px #777;
+}
+
+/******** BUTTON ********/
+#btn-scan {
+	width: 45px;
+	padding: 0;
+	margin:20px 0px 0px 234px;
+	border-style: none;
+	background-color:transparent;
+	cursor: pointer;
+}
+
+#button {
+	width: 38px;
+	height:auto;
+	margin: auto;
+}
+
+.info {
+	margin-left: 26%;
+}
+
+/******** WEBCAM ********/
+#FACE_SRC_WEBCAM {
+	width: 100px;
+	height: auto;
+	position: initial;
+	margin-right: 24px;
+
+}
+
+
+
+/******** RIGHT ********/
+
+.boxe {
+	width:264px;
+	height:auto;
+	float: right;
+}
+
+#title-box {
+	font-size: 20px;
+	line-height: 22px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	height: auto;
+}
+
+#artist-box {
+	height: auto;
+	margin-bottom: 10px;
+}
+
+#description-box {
+	height: auto;
+	margin-bottom: 10px;
+}
+
+#mood-box {
+	height: auto;
+	margin-bottom: 10px;
+}
+
+
+/******** PRESENTATION ********/
+
+
+#myCarousel {width: 800px;
+margin-left:27%;
+top:100px;}
+.carousel-inner>.item>img,.carousel-inner>.item>a>img{display:block;max-width:100%;height:auto}
+.img-rounded{border-radius:6px}
+.img-thumbnail{display:inline-block;max-width:100%;height:auto;padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
+.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
+
+.carousel{position:relative}
+.carousel-inner{position:relative;width:800px;overflow:hidden}
+.carousel-inner>.item{position:relative;display:none;-webkit-transition:.6s ease-in-out left;-o-transition:.6s ease-in-out left;transition:.6s ease-in-out left}
+.carousel-inner>.item>img,.carousel-inner>.item>a>img{line-height:1}@media all and (transform-3d),(-webkit-transform-3d){.carousel-inner>.item{-webkit-transition:-webkit-transform .6s ease-in-out;-o-transition:-o-transform .6s ease-in-out;transition:transform .6s ease-in-out;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000;perspective:1000}
+.carousel-inner>.item.next,.carousel-inner>.item.active.right{left:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}
+.carousel-inner>.item.prev,.carousel-inner>.item.active.left{left:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}
+.carousel-inner>.item.next.left,.carousel-inner>.item.prev.right,.carousel-inner>.item.active{left:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}
+.carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev{display:block}
+.carousel-inner>.active{left:0}
+.carousel-inner>.next,.carousel-inner>.prev{position:absolute;top:0;width:800px}
+.carousel-inner>.next{left:100%}
+.carousel-inner>.prev{left:-100%}
+.carousel-inner>.next.left,.carousel-inner>.prev.right{left:0}
+.carousel-inner>.active.left{left:-100%}
+.carousel-inner>.active.right{left:100%}
+
+.carousel-control{position:absolute;top:100px;bottom:0;left:27%;width:15%;height:500px;font-size:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6);filter:alpha(opacity=50);opacity:.5}
+.carousel-control.left{}
+.carousel-control.right{left:70%;}
+.carousel-control .icon-prev,.carousel-control .icon-next,.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right{position:absolute;top:50%;z-index:5;display:inline-block}
+.carousel-control .icon-prev,.carousel-control .glyphicon-chevron-left{left:50%;margin-left:-10px}
+.carousel-control .icon-next,.carousel-control .glyphicon-chevron-right{right:50%;margin-right:-10px}
+.carousel-control .icon-prev,.carousel-control .icon-next{width:20px;height:20px;margin-top:-10px;font-family:serif}
+.carousel-control .icon-prev:before{content:'\2039'}
+.carousel-control .icon-next:before{content:'\203a'}
+
+.carousel-indicators{position:absolute;bottom:10px;left:50%;z-index:15;width:60%;padding-left:0;margin-left:-30%;text-align:center;list-style:none}
+.carousel-indicators li{display:inline-block;width:10px;height:10px;margin:1px;text-indent:-999px;cursor:pointer;background-color:#000 \9;background-color:rgba(0,0,0,0);border:1px solid #fff;border-radius:10px}
+.carousel-indicators .active{width:12px;height:12px;margin:0;background-color:#fff}
+
+.carousel-caption{position:absolute;right:15%;bottom:20px;left:15%;z-index:10;padding-top:20px;padding-bottom:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.carousel-caption .btn{text-shadow:none}
