@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://rijksemotions.com/stylesheet.css">
+    <title>Rijks Emotions</title>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-25504931-3', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+<div id="container">
+	
+	<!-- Header -->
+	<div class="container-left">
+
+		<!-- LOGO -->
+	  	<a href="http://rijksemotions.com/"><img class="logo" src="http://rijksemotions.com/img/logo.png" alt="logo"></a>
+
+	  	<!-- MENU -->
+		<div class="nav">
+			<ul>
+			<ul>
+			  <li><a href="http://rijksemotions.com/">home</a></li>
+			  <li><a href="http://rijksemotions.com/about.html">about</a></li>
+			  <li><a href="http://rijksemotions.com/github.html">github</a></li>
+			  <li><a href="http://rijksemotions.com/contact.html">contact</a></li>
+			</ul>
+		</div> 
+
+		<!-- ABOUT -->
+	    <div class="contact">
+			We are four students from <a href="https://www.hyperisland.com/programs-and-courses/digital-data-strategist"> Hyper Island - Digital Data Strategy program.</a> <br><br>
+			<a href="https://www.linkedin.com/in/thomasbouillot/en">Thomas Bouillot</a><br>
+			<a href="https://www.linkedin.com/pub/rikke-hindborg/61/b33/b84">Rikke Hindborg</a><br>
+			<a href="http://www.ismailamir.com/">Amir Ismail</a><br>
+			<a href="https://www.linkedin.com/pub/sandra-valenca/75/b17/716">Sandra Valenca</a><br>
+	    </div>
+	    <div class="social">
+	    	<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=rijksemotions.com"><img src="http://rijksemotions.com/img/facebook.png"></a>
+	    	
+	    	<a target="_blank" href="https://twitter.com/home?status=Discover%20the%20Rijksemotions%20experience%20rijksemotions.com"><img src="http://rijksemotions.com/img/twitter.png"></a>
+
+	    	<a target="_blank" href="//www.reddit.com/submit"><img src="http://rijksemotions.com/img/reddit.png" alt="submit to reddit" border="0" /> </a>
+
+
+	    </div>
+	</div>
+	<!-- Main page content -->
+
+	<div class="container-mid">
+		<!-- WEBCAM -->
+	    <style>
+    .hidden { display : none; }
+      .container { width : 100%; }
+    </style><!-- Main page content -->
+    <video autoplay="" id="FACE_SRC_WEBCAM"></video> <img class="hidden" id="img_snapshot" src="">
+
+	    <!-- PORTRAIT -->
+	    <img id="advertisement-img" src="http://rijksemotions.com/img/test.png" alt="portrait" width="420px">
+	    
+
+
+	    <!-- DESCRIPTION -->
+	    <div class="boxe">
+	      <div id="title-box"></div>
+	      <div id="artist-box"></div>
+	      <div id="description-box"></div>
+	      <div id="mood-box"></div>
+	 	</div>
+
+	 		    <!-- BUTTON -->
+		<button id="btn-scan" onclick="sendDetectRequest();" type="button">
+			<img id="button" src="http://rijksemotions.com/img/camera.png" alt="button">
+		</button>
+				  <div class="info">please use Chrome or Firefox</div>
+
+		
+	</div>
+
+	    <!-- Load jquery and FACE libraries -->
+	    <script src="http://rijksemotions.com/FACE-1.0.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!-- Page control -->
+	     <script>
+	      var client_id = '4a3484e0b23747129024f9ef87af90a9';
+	      var app_key   = '1fe063aa631e4d6ba5e0be86097912f6';
+
+	    function success( result ) {
+	        if( result.persons.length > 0 ) {
+	          age        = result.persons[0].age.value;
+	          gender     = result.persons[0].gender.value;
+	          confidence = result.persons[0].gender.confidence;
+
+	          happiness = "happiness-" + result.persons[0].expressions.happiness.value;
+	          sadness = "sadness-" + result.persons[0].expressions.sadness.value;
+	          neutral = "neutral-" + result.persons[0].expressions.neutral.value; 
+	          surprise = "surprise-" + result.persons[0].expressions.surprise.value;
+	          anger = "anger-" + result.persons[0].expressions.anger.value;
+	          disgust = "disgust-" + result.persons[0].expressions.disgust.value;
+	          fear = "fear-" + result.persons[0].expressions.fear.value;
+	          
+
+	          var expressions = [happiness, sadness, neutral, surprise, anger, disgust, fear];
+
+	          for(var i = 0; i < 7; i++) {
+	                var value_array = expressions[i].split("-");
+	                value = value_array[1];
+	                //$('#output').append('<br/>' + i + ": " + value_array[0] + ", " + value_array[1]);
+	              }
+	               //$('#output').append('<br/>');
+
+	          var maxExpression = "";
+	          var maxValue = 0;
+	          
+
+	         for(var i = 0; i < 7; i++) {
+	              var value_array = expressions[i].split("-");
+	              value = Number(value_array[1]);
+
+	              if(value >= maxValue){
+	                maxValue = value;
+	                maxExpression = value_array[0];
+	                //$('#output').append('<br/>' + i + ": " + maxExpression + ", " + maxValue);
+	              }
+	          }
+	          //$('#output').append('<br/><br/><br/>');
+
+	          $.get( "fetchid.php", { age: age, gender: gender, expression: maxExpression } )
+	          .done(function(data) {
+	        var fetchData = new XMLHttpRequest(); 
+	        fetchData.open("GET", "https://www.rijksmuseum.nl/api/en/collection/" + data + "?key=kheFLvVc&format=json", false)
+	        fetchData.send()
+	        
+	        var searchData = fetchData.responseText
+	        console.log(searchData);
+	        
+	        searchData = jQuery.parseJSON(searchData);
+	        
+	        var img = searchData.artObject.webImage.url; 
+	        var desc = searchData.artObject.description; 
+	        var ti = searchData.artObject.title; 
+	        var art = searchData.artObject.makers[0].name; 
+	    $('#description-box').html(desc);
+	    $('#title-box').html(ti);
+	    $('#artist-box').html(art);
+	    $('#advertisement-img').attr('src', img);
+	    $('#mood-box').html("You are a <b>" + age + "</b> year old <b>" + gender + "</b> with the facial expression of <b>" + maxExpression + "</b>");
+	          });
+	        }
+	    }
+	        function failure( error ) {
+	        alert( error );
+	      }
+
+	      function sendDetectRequest() { 
+	        var img = document.querySelector( "#img_snapshot" );
+	        if( img.naturalWidth == 0 ||  img.naturalHeight == 0 ) // Check if a snapshot has been taken
+	          return;
+	        var imgBlob = FACE.util.dataURItoBlob( img.src );
+	        FACE.sendImage( imgBlob, success, failure, app_key, client_id, 'age,gender,expressions' );
+	      }
+
+	    function startCapture() {
+	        FACE.webcam.startPlaying( "FACE_SRC_WEBCAM"  );
+	        setInterval( function()
+
+	        {
+	          FACE.webcam.takePicture( "FACE_SRC_WEBCAM", "img_snapshot" );
+	           $( "#btn-play" ).hide();
+	          $( "#btn-snapshot" ).show();
+	        },
+	        1100 );
+	      }
+
+	    // Trigger the start - remove this block (and activate button) to trigger webcam start via button instead
+	      $( document ).ready( function() {
+	        if( client_id =='' ) {
+	          alert( 'Please specify your keys in the source' );
+	        } else {
+	          startCapture();
+	        }
+	      });
+	    </script>
+</div>
+</body>
+</html>
